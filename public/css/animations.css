@@ -1,0 +1,145 @@
+/**
+ * @file: animations.css
+ * @description: Webflow-style Keyframe Animations & Utilities
+ * @timing: Custom cubic-bezier for "expensive" feel
+ */
+
+:root {
+    /* Webflow-like smooth easing */
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-elastic: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* =========================================
+   1. FADE IN (Entrada sutil)
+   ========================================= */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 500ms var(--ease-out-expo) forwards;
+}
+
+/* =========================================
+   2. SLIDE UP (Elementos principales)
+   ========================================= */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-slideUp {
+    animation: slideUp 600ms var(--ease-out-expo) forwards;
+}
+
+/* Se puede staggered con delay en JS o con clases auxiliares */
+.delay-100 {
+    animation-delay: 100ms;
+}
+
+.delay-200 {
+    animation-delay: 200ms;
+}
+
+.delay-300 {
+    animation-delay: 300ms;
+}
+
+/* =========================================
+   3. SCALE IN (Imágenes y Cards)
+   ========================================= */
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.animate-scaleIn {
+    animation: scaleIn 500ms var(--ease-out-expo) forwards;
+}
+
+/* =========================================
+   4. HOVER SCALE (Interacciones)
+   ========================================= */
+/* Utility class para aplicar en elementos interactivos */
+.hover-scale {
+    transition: transform 300ms var(--ease-out-expo);
+}
+
+.hover-scale:hover {
+    transform: scale(1.03);
+}
+
+.hover-lift {
+    transition: transform 300ms var(--ease-out-expo), box-shadow 300ms var(--ease-out-expo);
+}
+
+.hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* =========================================
+   5. PULSE CUSTOM (Call to Action)
+   ========================================= */
+@keyframes pulseCustom {
+    0% {
+        box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.4);
+        /* Color primario */
+        transform: scale(1);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(139, 92, 246, 0);
+        transform: scale(1.02);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(139, 92, 246, 0);
+        transform: scale(1);
+    }
+}
+
+.animate-pulseCustom {
+    animation: pulseCustom 2000ms infinite;
+}
+
+/* =========================================
+   UTILITIES
+   ========================================= */
+/* Clase para ocultar elementos antes de animar (si usas Intersection Observer) */
+.opacity-0-start {
+    opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    ::before,
+    ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

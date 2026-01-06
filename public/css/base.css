@@ -1,0 +1,151 @@
+/**
+ * @file: base.css
+ * @description: Reset, Typography & Base Styles
+ * @requires: variables.css
+ */
+
+/* =========================================
+   1. FONTS IMPORT
+   ========================================= */
+/* Nota: Se importan las fuentes optimizadas con swap */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600;700&display=swap');
+
+/* =========================================
+   2. MODERN RESET
+   ========================================= */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    /* Smooth scrolling para anclas */
+}
+
+/* =========================================
+   3. BASE STYLES
+   ========================================= */
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-bg-body);
+    color: var(--color-text-main);
+    line-height: 1.6;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Imágenes responsivas por defecto */
+img,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* =========================================
+   4. TYPOGRAPHY
+   ========================================= */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    color: var(--color-text-main);
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 2.5rem;
+    /* ~40px Mobile */
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    font-size: 2rem;
+    /* ~32px */
+    letter-spacing: -0.01em;
+}
+
+h3 {
+    font-size: 1.5rem;
+    /* ~24px */
+}
+
+/* Text styles */
+p {
+    margin-bottom: 1rem;
+    color: var(--color-text-muted);
+}
+
+/* Desktop typography scaling */
+@media (min-width: 1024px) {
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    /* ~56px Desktop */
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    h3 {
+        font-size: 1.75rem;
+    }
+}
+
+/* =========================================
+   5. LINKS & BUTTONS BASE
+   ========================================= */
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+a:hover {
+    color: var(--color-primary-dark);
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-family: inherit;
+}
+
+/* =========================================
+   6. ACCESSIBILITY (FOCUS)
+   ========================================= */
+:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* Eliminar outline feo si no es navegación por teclado */
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* =========================================
+   7. UTILITY HELPERS
+   ========================================= */
+/* Selección de texto con color de marca */
+::selection {
+    background-color: var(--color-primary-light);
+    color: white;
+}
