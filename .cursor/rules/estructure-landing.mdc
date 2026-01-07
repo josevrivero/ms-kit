@@ -1,0 +1,235 @@
+---
+alwaysApply: true
+---
+
+### SECCIÓN 7: OPCIONES DE PRECIO (SI APLICA)
+
+**Objetivo**: Facilitar decisión sin pérdida de poder de negociación
+
+```
+═══════════════════════════════════════════════════════
+
+                PLANES Y PRECIOS
+
+    STARTER          PROFESIONAL ⭐      ENTERPRISE
+
+    $997/mes         $2,497/mes          Personalizado
+
+Landing Page    ✓    Sitio completo  ✓  Solución 360°  ✓
+básica              (15+ páginas)
+
+Optimización    ✓    A/B Testing    ✓    Ilimitado     ✓
+(1 iteración)       (3 iteraciones)
+
+Soporte         ✓    Soporte        ✓    Dedicado 24/7 ✓
+(Email)            Priority
+
+Garantía        30 días              60 días          90 días
+
+[COMENZAR]      [POPULAR]            [CONTACTAR]
+
+═══════════════════════════════════════════════════════
+```
+
+**Principios de pricing efectivo**:
+
+- Ofrecer exactamente 3 opciones (principio de Goldilocks)
+- Destacar opción recomendada visualmente
+- Tabla comparativa clara
+- Incluir garantía en cada opción
+- CTA diferente para cada tier
+
+### SECCIÓN 8: LLAMADAS A LA ACCIÓN MÚLTIPLES
+
+**Objetivo**: Capturar conversión en múltiples puntos
+
+#### Posicionamiento estratégico de CTAs:
+
+1. **Above the fold** → Conversión inmediata
+2. **Después de propuesta de valor** → Clientes impacientes
+3. **Después de testimonios** → Validados por prueba social
+4. **Después de FAQ** → Objeciones resueltas
+5. **Al final de página** → Último impulso
+
+#### Ejemplos de Lenguaje por Temperatura:
+
+**Clientes HOT (listos para comprar)**:
+
+- "Quiero empezar ahora"
+- "Contratar servicio"
+- "Solicitar demostración"
+
+**Clientes WARM (considerando)**:
+
+- "Ver más casos de éxito"
+- "Descargar presupuesto"
+- "Agendar llamada de consulta"
+
+**Clientes COLD (explorando)**:
+
+- "Descargar guía gratuita"
+- "Ver webinar grabado"
+- "Calcular mi ROI"
+
+---
+
+### SECCIÓN 9: EL CIERRE - ÚLTIMO IMPULSO
+
+**Objetivo**: Crear urgencia final sin ser agresivo
+
+```
+═══════════════════════════════════════════════════════
+
+         🚀 TRANSFORMA TU WEB EN MÁQUINA DE VENTAS
+
+No pierdas más oportunidades de negocio por una página
+web que no convierte.
+
+⏰ OFERTA ESPECIAL: Auditoría gratuita ($500 de valor)
+   Solo para las próximas 10 empresas
+
+         GARANTÍA DE 60 DÍAS • SIN RIESGO
+
+           [SOLICITAR MI AUDITORÍA GRATUITA →]
+
+         ✓ Respuesta en menos de 24 horas
+         ✓ Sin compromiso de compra
+         ✓ Análisis personalizado de tu industria
+
+═══════════════════════════════════════════════════════
+```
+
+**Elementos del cierre efectivo**:
+
+- Reafirmación del beneficio principal
+- Elemento de urgencia moderada (escasez genuina)
+- Reiteración de garantía/reducción de riesgo
+- CTA final prominente
+- Microcopias que reducen fricción
+
+---
+
+## 3. COPY FRAMEWORK PROBADO: PROBLEMA → SOLUCIÓN → BENEFICIO
+
+### Estructura Fundamental
+
+```
+PROBLEMA
+"La mayoría de empresas B2B luchan con webs que no convierten..."
+
+AGITACIÓN
+"Pierden miles en tráfico sin ver retorno, ven cómo competidores
+capturan sus clientes, se frustran por invertir sin resultados..."
+
+SOLUCIÓN
+"Creamos estructuras web probadas que aumentan conversión 300%..."
+
+BENEFICIO
+"Para que puedas crecer sin desperdiciar presupuesto en tráfico
+que no convierte."
+```
+
+### El Mantra (3-4 palabras)
+
+Resumen ultra-conciso de tu oferta:
+
+- "Auditoría. Transformación. Resultados."
+- "Diseño que convierte."
+- "Ventas sin complicación."
+
+---
+
+## 4. CHECKLIST PRE-LANZAMIENTO
+
+### Contenido y Copy
+
+- [ ] Titular pasa el test del gruñido
+- [ ] Subtítulo clarifica y amplía
+- [ ] Propuesta de valor escaneable (3-4 items)
+- [ ] Problema conecta emocionalmente
+- [ ] Plan es simple y claro (3-4 pasos)
+- [ ] FAQ aborda 5+ objeciones
+- [ ] Testimonios tienen foto + nombre + métrica
+- [ ] Garantía es clara y específica
+- [ ] Lenguaje CTA es accionable primera persona
+
+### Diseño y Experiencia
+
+- [ ] Jerarquía visual clara (H1 > H2 > H3)
+- [ ] 100% responsive en móvil
+- [ ] Botones tienen mínimo 44x44px
+- [ ] Colores tienen contraste 4.5:1 (WCAG AA)
+- [ ] Espacios en blanco generosos
+- [ ] Imágenes optimizadas (<200kb)
+- [ ] Velocidad de carga <3 segundos
+- [ ] Scroll suave, sin saltos
+
+### Elementos de Conversión
+
+- [ ] CTA visible above the fold
+- [ ] Prueba social en sección 2
+- [ ] Logos de clientes reconocibles
+- [ ] Testimonios con foto verificable
+- [ ] Garantía visible múltiples veces
+- [ ] Trust badges en formulario
+- [ ] Formulario <5 campos si es posible
+- [ ] Thank you page con próximos pasos
+
+### Technical
+
+- [ ] SSL certificado activo
+- [ ] Meta tags optimizados (title, description)
+- [ ] Schema markup implementado
+- [ ] Analytics configurado
+- [ ] Eventos de conversión rastreados
+- [ ] Validación de formulario en tiempo real
+- [ ] Página de error 404 personalizada
+- [ ] Mobile viewport configurado
+
+### Post-Lanzamiento Inmediato
+
+- [ ] Revisar analytics diariamente primeros 7 días
+- [ ] Revisar recordings de sesiones (Hotjar)
+- [ ] Identificar tasa de rebote
+- [ ] Planificar primer A/B test
+- [ ] Recopilar testimonios de primeros clientes
+
+---
+
+## 5. MÉTRICAS CLAVE A MONITOREAR
+
+### Conversión
+
+- **Conversion Rate**: % de visitantes que completan el objetivo
+- **Lead Cost**: Costo por lead generado
+- **Cost Per Conversion**: Costo total / conversiones
+
+### Engagement
+
+- **Bounce Rate**: % que abandona sin interactuar (meta: <50%)
+- **Time on Page**: Tiempo promedio (meta: >1:30)
+- **Scroll Depth**: % de página visualizada (meta: >50%)
+
+### Formulario
+
+- **Form Abandonment Rate**: % que empiezan pero no completan
+- **Average Form Completion Time**: Tiempo promedio (meta: <3 min)
+- **Field Drop-off**: Qué campo abandona más gente
+
+### Traffic
+
+- **Top Traffic Sources**: Qué canal trae más visitantes
+- **Device Breakdown**: Desktop vs Mobile vs Tablet
+- **Geographic Data**: Dónde viven tus visitantes
+
+## CONCLUSIÓN
+
+Una landing page de conversión alta no es un proyecto de diseño hermoso, es un **sistema de persuasión efectivo** donde cada elemento trabaja coordinado hacia un objetivo único: convertir visitantes en clientes.
+
+La estructura presentada en esta guía ha sido probada en miles de campañas y consistentemente genera:
+
+- Aumento conversión 100-300%+
+- Reducción bounce rate 20-40%
+- ROI positivo en 30-60 días
+
+**Recuerda**: Claridad siempre vence a creatividad. Un mensaje claro y simple con estructura probada convertirá más que el diseño más hermoso pero confuso.

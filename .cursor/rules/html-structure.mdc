@@ -1,0 +1,92 @@
+---
+alwaysApply: false
+---
+
+# REGLA: ESTRUCTURA HTML SEMÁNTICA
+
+## CUÁNDO APLICA
+
+- Auto-attach a archivos \*.html
+- Prioritario: Revisar siempre antes de generar HTML
+
+## ESTÁNDARES
+
+### 1. DOCTYPE Y META
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="[Descripción 155-160 caracteres]" />
+    <title>[Máximo 60 caracteres]</title>
+  </head>
+</html>
+```
+
+### 2. ESTRUCTURA SEMÁNTICA OBLIGATORIA
+
+```html
+<body>
+  <header>
+    <!-- Navegación principal -->
+    <nav></nav>
+  </header>
+
+  <main>
+    <!-- Contenido principal -->
+    <section>
+      <!-- Cada sección principal -->
+      <h2>Título Sección</h2>
+      <article></article>
+    </section>
+  </main>
+
+  <footer>
+    <!-- Pie de página -->
+    <nav></nav>
+  </footer>
+</body>
+```
+
+### 3. FORMULARIOS SEGUROS
+
+```html
+<!-- Siempre incluir CSRF token -->
+<form method="POST" action="/api/submit-form.php" id="booking-form">
+  <input
+    type="hidden"
+    name="csrf_token"
+    value="<?php echo $_SESSION['csrf_token']; ?>"
+  />
+
+  <!-- Cada input con label y validación -->
+  <label for="email">Email</label>
+  <input
+    type="email"
+    id="email"
+    name="email"
+    required
+    data-validate="email"
+    placeholder="tu@email.com"
+    aria-label="Correo electrónico"
+  />
+</form>
+```
+
+### 4. ACCESIBILIDAD WCAG 2.1 AA
+
+- [ ] Color contrast: 4.5:1 mínimo
+- [ ] Alt text en imágenes (no "image" o "photo")
+- [ ] Labels en formularios (no placeholder-only)
+- [ ] Heading hierarchy: h1 → h2 → h3 (nunca saltar)
+- [ ] ARIA attributes para contenido dinámico
+- [ ] Keyboard navigation funciona (Tab, Enter, Escape)
+
+### 5. VALIDACIÓN W3C
+
+```bash
+# Pasar por https://validator.w3.org
+# Target: 0 errores, máximo 5 warnings
+```

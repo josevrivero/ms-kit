@@ -1,0 +1,98 @@
+---
+alwaysApply: false
+---
+
+# REGLA: TAILWIND CSS + CSS VARIABLES
+
+## CUÁNDO APLICA
+
+- Auto-attach a archivos \*.css
+- Prioritario en estilos
+
+## ARQUITECTURA CSS
+
+### 1. USAR TAILWIND PRIMERO
+
+```css
+/* ✅ Correcto: Usar @apply para componentes */
+.btn-primary {
+  @apply px-6 py-3 bg-primary-600 hover:bg-primary-700 
+         text-white font-semibold rounded-lg 
+         transition-all duration-300 hover:shadow-lg;
+}
+
+/* ❌ Incorrecto: CSS puro cuando Tailwind lo cubre */
+.button {
+  padding: 12px 24px;
+  background: blue;
+  color: white;
+}
+```
+
+### 2. CSS VARIABLES (variables.css)
+
+```css
+:root {
+  /* Colores personalizables por cliente */
+  --color-primary: #2c78b3; /* Personaliza esto */
+  --color-secondary: #f4a261;
+  --color-accent: #e76f51;
+
+  /* Grayscale */
+  --color-gray-50: #f9fafb;
+  --color-gray-900: #111827;
+
+  /* Semánticos */
+  --color-success: #10b981;
+  --color-error: #ef4444;
+
+  /* Espacios */
+  --spacing-section: 80px;
+  --spacing-container: 1200px;
+
+  /* Tipografía */
+  --font-heading: "Poppins", sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+
+  /* Shadows */
+  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+```
+
+### 3. ESTRUCTURA ARCHIVOS CSS
+
+- `variables.css` → Tokens y custom properties
+- `base.css` → Reset, tipografía, html/body
+- `components.css` → Botones, cards, forms (con @apply)
+- `animations.css` → Keyframes y @keyframes
+
+### 4. MOBILE-FIRST RESPONSIVE
+
+```css
+/* Default: mobile (320px) */
+.section {
+  padding: 40px 0;
+}
+
+/* Tablet (768px) */
+@media (min-width: 768px) {
+  .section {
+    padding: 60px 0;
+  }
+}
+
+/* Desktop (1024px+) */
+@media (min-width: 1024px) {
+  .section {
+    padding: var(--spacing-section);
+  }
+}
+```
+
+### 5. VALIDACIÓN
+
+- [ ] CSS mínificado en producción
+- [ ] Lighthouse Performance: 90+
+- [ ] Ninguna clase CSS duplicada
+- [ ] Todas las variables usadas en variables.css
