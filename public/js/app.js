@@ -16,38 +16,43 @@ document.addEventListener('DOMContentLoaded', () => {
    1. MOBILE MENU TOGGLE
    ========================================= */
 function initMobileMenu() {
-    const btn = document.querySelector('button[aria-label="Abrir menú"]');
-    const nav = document.querySelector('header nav');
+    const btn = document.querySelector('#mobile-menu-btn');
+    const nav = document.querySelector('#mobile-nav');
 
     if (!btn || !nav) return;
 
-    btn.addEventListener('click', () => {
-        // Toggle de clases para mostrar/ocultar
-        nav.classList.toggle('hidden');
-        nav.classList.toggle('absolute');
-        nav.classList.toggle('top-full');
-        nav.classList.toggle('left-0');
-        nav.classList.toggle('w-full');
-        nav.classList.toggle('bg-white');
-        nav.classList.toggle('border-t');
-        nav.classList.toggle('flex-col');
-        nav.classList.toggle('p-6');
-        nav.classList.toggle('shadow-lg');
+    const toggleMenu = (show) => {
+        if (show) {
+            nav.classList.remove('hidden');
+            btn.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>';
+            btn.setAttribute('aria-label', 'Cerrar menú');
+        } else {
+            nav.classList.add('hidden');
+            btn.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>';
+            btn.setAttribute('aria-label', 'Abrir menú');
+        }
+    };
 
-        // Toggle icon (Simple swap logic)
-        const isOpen = nav.classList.contains('absolute');
-        btn.innerHTML = isOpen
-            ? '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>'
-            : '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>';
+    btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isHidden = nav.classList.contains('hidden');
+        toggleMenu(isHidden);
     });
 
     // Cerrar menú al hacer click en un enlace
-    nav.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            if (nav.classList.contains('absolute')) {
-                btn.click(); // Simular click para cerrar
+    nav.addEventListener('click', (e) => {
+        if (e.target.closest('a')) {
+            toggleMenu(false);
+        }
+    });
+
+    // Cerrar menú al hacer click fuera
+    document.addEventListener('click', (e) => {
+        if (!nav.contains(e.target) && !btn.contains(e.target)) {
+            if (!nav.classList.contains('hidden')) {
+                toggleMenu(false);
             }
-        });
+        }
     });
 }
 

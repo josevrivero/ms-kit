@@ -10,13 +10,13 @@
 
 /* Contenedor principal centrado con padding responsivo */
 .container {
-    @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
 }
 
 /* Espacio vertical estándar (según variables de section) */
 .section {
-    padding-top: var(--spacing-section);
-    padding-bottom: var(--spacing-section);
+  padding-top: var(--spacing-section);
+  padding-bottom: var(--spacing-section);
 }
 
 /* =========================================
@@ -25,15 +25,15 @@
 
 /* Título de sección centrado y estilizado */
 .section-title {
-    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-4;
-    font-family: var(--font-heading);
-    color: var(--color-text-main);
+  @apply text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-4;
+  font-family: var(--font-heading);
+  color: var(--color-text-main);
 }
 
 /* Subtítulo descriptivo */
 .section-subtitle {
-    @apply text-lg md:text-xl text-center max-w-2xl mx-auto mb-12;
-    color: var(--color-text-muted);
+  @apply text-lg md:text-xl text-center max-w-2xl mx-auto mb-12;
+  color: var(--color-text-muted);
 }
 
 /* =========================================
@@ -42,43 +42,43 @@
 
 /* Botón Base: Estructura común, sin colores */
 .btn {
-    @apply inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-sm cursor-pointer transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  @apply inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-sm cursor-pointer transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2;
 }
 
 /* Botón Primario: Acción principal (CTA) */
 .btn-primary {
-    @apply .btn text-white shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
-    background-color: var(--color-primary);
+  @apply .btn text-white shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
+  background-color: var(--color-primary);
 }
 
 .btn-primary:hover {
-    background-color: var(--color-primary-dark);
+  background-color: var(--color-primary-dark);
 }
 
 .btn-primary:focus {
-    --tw-ring-color: var(--color-primary);
+  --tw-ring-color: var(--color-primary);
 }
 
 /* Botón Secundario: Acciones alternativas */
 .btn-secondary {
-    @apply .btn text-white shadow hover:shadow-md;
-    background-color: var(--color-secondary);
+  @apply .btn text-white shadow hover:shadow-md;
+  background-color: var(--color-secondary);
 }
 
 .btn-secondary:hover {
-    background-color: var(--color-secondary-dark);
+  background-color: var(--color-secondary-dark);
 }
 
 /* Botón Outline: Acciones terciarias o "Ghost" buttons */
 .btn-outline {
-    @apply .btn bg-transparent hover:bg-gray-50;
-    border: 2px solid var(--color-primary);
-    color: var(--color-primary);
+  @apply .btn bg-transparent hover:bg-gray-50;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
 }
 
 .btn-outline:hover {
-    background-color: var(--color-primary);
-    color: white;
+  background-color: var(--color-primary);
+  color: white;
 }
 
 /* =========================================
@@ -87,19 +87,19 @@
 
 /* Card Base: Fondo blanco, borde sutil, sombra suave */
 .card {
-    @apply bg-white rounded-2xl p-6 md:p-8 border border-gray-100;
-    box-shadow: var(--shadow-card);
+  @apply bg-white rounded-2xl p-6 md:p-8 border border-gray-100;
+  box-shadow: var(--shadow-card);
 }
 
 /* Card Hover: Efecto de elevación al pasar el mouse */
 .card-hover {
-    @apply .card transition-all duration-300 transform;
+  @apply .card transition-all duration-300 transform;
 }
 
 .card-hover:hover {
-    box-shadow: var(--shadow-hover);
-    transform: translateY(-4px);
-    border-color: var(--color-primary-light);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-4px);
+  border-color: var(--color-primary-light);
 }
 
 /* =========================================
@@ -108,31 +108,31 @@
 
 /* Grupo de formulario (Label + Input) */
 .form-group {
-    @apply mb-5;
+  @apply mb-5;
 }
 
 .form-label {
-    @apply block text-sm font-medium mb-2;
-    color: var(--color-text-main);
+  @apply block text-sm font-medium mb-2;
+  color: var(--color-text-main);
 }
 
 /* Input Base: Estilos por defecto para inputs y textareas */
 .input-base {
-    @apply block w-full px-4 py-3 rounded-lg border bg-white text-gray-900 placeholder-gray-400 transition-shadow duration-200 ease-in-out;
-    border-color: var(--color-border);
+  @apply block w-full px-4 py-3 rounded-lg border bg-white text-gray-900 placeholder-gray-400 transition-shadow duration-200 ease-in-out;
+  border-color: var(--color-border);
 }
 
 /* Input Focus: Estado activo */
 .input-base:focus {
-    @apply outline-none ring-2 border-transparent;
-    --tw-ring-color: var(--color-primary);
+  @apply outline-none ring-2 border-transparent;
+  --tw-ring-color: var(--color-primary);
 }
 
 /* Input Error */
 .input-error {
-    @apply border-red-500 focus:ring-red-500;
+  @apply border-red-500 focus:ring-red-500;
 }
 
 .input-helper {
-    @apply mt-1 text-sm text-gray-500;
+  @apply mt-1 text-sm text-gray-500;
 }
