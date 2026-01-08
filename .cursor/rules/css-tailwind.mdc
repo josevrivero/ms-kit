@@ -2,70 +2,66 @@
 alwaysApply: false
 ---
 
-# REGLA: TAILWIND CSS + CSS VARIABLES
+# REGLA: HYBRID BEM + TAILWIND ARCHITECTURE
 
 ## CUÁNDO APLICA
 
 - Auto-attach a archivos \*.css
 - Prioritario en estilos
 
-## ARQUITECTURA CSS
+## ARQUITECTURA DE DISEÑO (MEIKING SYSTEMS)
 
-### 1. USAR TAILWIND PRIMERO
-
-```css
-/* ✅ Correcto: Usar @apply para componentes */
-.btn-primary {
-  @apply px-6 py-3 bg-primary-600 hover:bg-primary-700 
-         text-white font-semibold rounded-lg 
-         transition-all duration-300 hover:shadow-lg;
-}
-
-/* ❌ Incorrecto: CSS puro cuando Tailwind lo cubre */
-.button {
-  padding: 12px 24px;
-  background: blue;
-  color: white;
-}
-```
-
-### 2. CSS VARIABLES (variables.css)
+### 1. CSS VARIABLES (variables.css)
 
 ```css
 :root {
-  /* Colores personalizables por cliente */
-  --color-primary: #2c78b3; /* Personaliza esto */
-  --color-secondary: #f4a261;
-  --color-accent: #e76f51;
-
-  /* Grayscale */
-  --color-gray-50: #f9fafb;
-  --color-gray-900: #111827;
-
-  /* Semánticos */
-  --color-success: #10b981;
-  --color-error: #ef4444;
-
-  /* Espacios */
-  --spacing-section: 80px;
-  --spacing-container: 1200px;
+  /* Branding - Digital Trust Protocol */
+  --color-primary: #0a192f; /* Deep Core Navy */
+  --color-accent: #00e0ff; /* Electric Cyan */
+  --color-white: #ffffff; /* Pure White */
 
   /* Tipografía */
   --font-heading: "Poppins", sans-serif;
-  --font-body: "Inter", system-ui, sans-serif;
+  --font-body: "Inter", sans-serif;
 
-  /* Shadows */
-  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.1);
-  --shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.15);
+  /* UI Tokens */
+  --shadow-premium: 0 10px 30px rgba(10, 25, 47, 0.08);
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 ```
 
-### 3. ESTRUCTURA ARCHIVOS CSS
+### 2. COMPONENTES CON BEM + @APPLY
 
-- `variables.css` → Tokens y custom properties
-- `base.css` → Reset, tipografía, html/body
-- `components.css` → Botones, cards, forms (con @apply)
-- `animations.css` → Keyframes y @keyframes
+```css
+/* Componente encapsulado */
+.card-tier {
+  @apply bg-white border border-gray-100 rounded-2xl p-8 shadow-sm transition-all;
+  transition: var(--transition-smooth);
+}
+
+.card-tier__title {
+  @apply text-2xl font-bold mb-4;
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+}
+
+.card-tier__button {
+  @apply px-6 py-3 rounded-lg font-semibold text-center inline-block;
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+}
+
+/* Modificador destacado */
+.card-tier--featured {
+  @apply ring-2 ring-offset-2;
+}
+```
+
+### 3. REGLAS DE ORO
+
+- Mobile First
+- CTAs usan siempre Electric Cyan
+- En fondos Deep Core Navy el texto pasa a blanco
 
 ### 4. MOBILE-FIRST RESPONSIVE
 

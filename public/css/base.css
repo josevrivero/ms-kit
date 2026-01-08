@@ -7,8 +7,8 @@
 /* =========================================
    1. FONTS IMPORT
    ========================================= */
-/* Nota: Se importan las fuentes optimizadas con swap */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600;700&display=swap');
+/* Nota: Las fuentes se importan en el HTML mediante <link> para mejor rendimiento */
+/* El @import bloquea el renderizado, por eso se usa <link> en index.php */
 
 /* =========================================
    2. MODERN RESET
@@ -16,30 +16,31 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html {
-    font-size: 16px;
-    scroll-behavior: smooth;
-    /* Smooth scrolling para anclas */
+  font-size: 16px;
+  scroll-behavior: smooth;
+  /* Smooth scrolling para anclas */
 }
 
 /* =========================================
    3. BASE STYLES
    ========================================= */
 body {
-    font-family: var(--font-body);
-    background-color: var(--color-bg-body);
-    color: var(--color-text-main);
-    line-height: 1.6;
-    min-height: 100vh;
-    position: relative;
-    overflow-x: hidden;
+  font-family: var(--font-body);
+  background-color: var(--color-primary);
+  color: var(--color-text-main);
+  line-height: 1.6;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* Imágenes responsivas por defecto */
@@ -47,9 +48,9 @@ img,
 video,
 canvas,
 svg {
-    display: block;
-    max-width: 100%;
-    height: auto;
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 /* =========================================
@@ -61,84 +62,82 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: var(--font-heading);
-    color: var(--color-text-main);
-    line-height: 1.2;
-    margin-bottom: 0.75rem;
-    font-weight: 700;
+  font-family: var(--font-heading);
+  color: var(--color-white);
+  line-height: 1.2;
+  font-weight: 700;
 }
 
 h1 {
-    font-size: 2.5rem;
-    /* ~40px Mobile */
-    letter-spacing: -0.02em;
+  font-size: 2.5rem;
+  /* ~40px Mobile */
+  letter-spacing: -0.02em;
 }
 
 h2 {
-    font-size: 2rem;
-    /* ~32px */
-    letter-spacing: -0.01em;
+  font-size: 2rem;
+  /* ~32px */
+  letter-spacing: -0.01em;
 }
 
 h3 {
-    font-size: 1.5rem;
-    /* ~24px */
+  font-size: 1.5rem;
+  /* ~24px */
 }
 
 /* Text styles */
 p {
-    margin-bottom: 1rem;
-    color: var(--color-text-muted);
+  color: var(--color-text-main);
 }
 
 /* Desktop typography scaling */
 @media (min-width: 1024px) {
-    h1 {
-        font-size: 3.5rem;
-    }
+  h1 {
+    font-size: 3.5rem;
+  }
 
-    /* ~56px Desktop */
-    h2 {
-        font-size: 2.5rem;
-    }
+  /* ~56px Desktop */
+  h2 {
+    font-size: 2.5rem;
+  }
 
-    h3 {
-        font-size: 1.75rem;
-    }
+  h3 {
+    font-size: 1.75rem;
+  }
 }
 
 /* =========================================
    5. LINKS & BUTTONS BASE
    ========================================= */
 a {
-    color: var(--color-primary);
-    text-decoration: none;
-    transition: color var(--transition-fast);
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-fast);
 }
 
-a:hover {
-    color: var(--color-primary-dark);
+ul {
+  list-style: none;
 }
 
 button {
-    cursor: pointer;
-    border: none;
-    background: none;
-    font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
 }
 
 /* =========================================
    6. ACCESSIBILITY (FOCUS)
    ========================================= */
 :focus-visible {
-    outline: 2px solid var(--color-primary);
-    outline-offset: 2px;
-    border-radius: 2px;
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 2px;
 }
 
 /* Eliminar outline feo si no es navegación por teclado */
 :focus:not(:focus-visible) {
-    outline: none;
+  outline: none;
 }
 
 /* =========================================
@@ -146,6 +145,6 @@ button {
    ========================================= */
 /* Selección de texto con color de marca */
 ::selection {
-    background-color: var(--color-primary-light);
-    color: white;
+  background-color: var(--color-primary-light);
+  color: white;
 }

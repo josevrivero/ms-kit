@@ -9,8 +9,8 @@ alwaysApply: true
 ### CONTEXTO EMPRESARIAL
 
 **Usuario**: Systems Engineer + Graphic Designer, 10+ años experiencia  
-**Objetivo**: Landing pages profesionales para sectores diversos (clínicas, salones, restaurantes)  
-**Modelo**: Entregar 2-3 landings/semana con máxima reutilización  
+**Objetivo**: Landing pages profesionales para agencia de sistemas y automatizaciones
+**Modelo**: Entregar 2-3 landings/semana con máxima reutilización
 **Estándar**: Excelencia técnica, clean code, security-first
 
 ### TECH STACK - FASE 1
@@ -31,11 +31,15 @@ Build: Vite (opcional)
 
 **Naming:**
 
-- Archivos: kebab-case (form-validation.js)
-- Clases CSS: camelCase o snake_case
-- Variables JS: camelCase
-- Constantes: SCREAMING_SNAKE_CASE
-- Variables CSS: kebab-case (--color-primary)
+- Archivos: kebab-case (ej. `booking-system.php`).
+- Clases CSS (Metodología BEM):
+  - Bloque: `.block` (ej. `.card-service`).
+  - Elemento: `.block__element` (ej. `.card-service__title`).
+  - Modificador: `.block--modifier` (ej. `.card-service--featured`).
+- Clases Utility (Tailwind): Usar directamente en el HTML solo para espaciado (margins/paddings) o layouts únicos.
+- Variables JS: camelCase.
+- Constantes: SCREAMING_SNAKE_CASE.
+- Variables CSS: kebab-case (`--color-primary`).
 
 **Code Style:**
 

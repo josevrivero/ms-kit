@@ -1,81 +1,174 @@
 /**
  * @file: animations.css
- * @description: Webflow-style Keyframe Animations & Utilities
+ * @description: Keyframe Animations & Utilities (BEM)
  * @timing: Custom cubic-bezier for "expensive" feel
  */
 
 :root {
-    /* Webflow-like smooth easing */
-    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-    --ease-elastic: cubic-bezier(0.34, 1.56, 0.64, 1);
+  /* Webflow-like smooth easing */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-elastic: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 /* =========================================
-   1. FADE IN (Entrada sutil)
+   0. AMBIENT VISUALS (GPU-friendly)
    ========================================= */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
 
-    to {
-        opacity: 1;
-    }
-}
-
-.animate-fadeIn {
-    animation: fadeIn 500ms var(--ease-out-expo) forwards;
+.orb {
+  filter: blur(28px);
+  opacity: 0.9;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
 }
 
 /* =========================================
-   2. SLIDE UP (Elementos principales)
+   1. FLOATY ANIMATION (Ambient orbs)
    ========================================= */
-@keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+@keyframes floaty {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -10px, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
 }
 
-.animate-slideUp {
-    animation: slideUp 600ms var(--ease-out-expo) forwards;
+.floaty {
+  animation: floaty 6.5s ease-in-out infinite;
 }
 
-/* Se puede staggered con delay en JS o con clases auxiliares */
+.floaty2 {
+  animation: floaty 8.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floaty,
+  .floaty2 {
+    animation: none !important;
+  }
+}
+
+/* =========================================
+   2. FLOAT ICON ANIMATION (Check icons)
+   ========================================= */
+
+@keyframes floatIcon {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.check-icon {
+  animation: floatIcon 3s ease-in-out infinite;
+  will-change: transform;
+}
+
+.check-icon:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.check-icon:nth-child(3) {
+  animation-delay: 1s;
+}
+
+/* =========================================
+   4. FADE IN UP (Elementos principales)
+   ========================================= */
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  opacity: 0; /* Inicialmente invisible */
+  transform: translateY(20px); /* Inicialmente desplazado hacia abajo */
+  animation: fadeInUp 0.6s ease forwards; /* Animación de entrada */
+}
+
+/* Delay utilities */
+.delay-1 {
+  animation-delay: 0.1s;
+}
+
+.delay-2 {
+  animation-delay: 0.2s;
+}
+
+.delay-3 {
+  animation-delay: 0.3s;
+}
+
+.delay-4 {
+  animation-delay: 0.4s;
+}
+
+.delay-5 {
+  animation-delay: 0.5s;
+}
+
+/* Legacy delay classes (mantener compatibilidad) */
 .delay-100 {
-    animation-delay: 100ms;
+  animation-delay: 100ms;
 }
 
 .delay-200 {
-    animation-delay: 200ms;
+  animation-delay: 200ms;
 }
 
 .delay-300 {
-    animation-delay: 300ms;
+  animation-delay: 300ms;
+}
+
+/* =========================================
+   5. SLIDE UP (Elementos principales)
+   ========================================= */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideUp {
+  animation: slideUp 600ms var(--ease-out-expo) forwards;
 }
 
 /* =========================================
    3. SCALE IN (Imágenes y Cards)
    ========================================= */
 @keyframes scaleIn {
-    from {
-        opacity: 0;
-        transform: scale(0.9);
-    }
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
 
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .animate-scaleIn {
-    animation: scaleIn 500ms var(--ease-out-expo) forwards;
+  animation: scaleIn 500ms var(--ease-out-expo) forwards;
 }
 
 /* =========================================
@@ -83,63 +176,59 @@
    ========================================= */
 /* Utility class para aplicar en elementos interactivos */
 .hover-scale {
-    transition: transform 300ms var(--ease-out-expo);
+  transition: transform 300ms var(--ease-out-expo);
 }
 
 .hover-scale:hover {
-    transform: scale(1.03);
+  transform: scale(1.03);
 }
 
 .hover-lift {
-    transition: transform 300ms var(--ease-out-expo), box-shadow 300ms var(--ease-out-expo);
+  transition: transform 300ms var(--ease-out-expo),
+    box-shadow 300ms var(--ease-out-expo);
 }
 
 .hover-lift:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-hover);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
 }
 
 /* =========================================
    5. PULSE CUSTOM (Call to Action)
    ========================================= */
 @keyframes pulseCustom {
-    0% {
-        box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.4);
-        /* Color primario */
-        transform: scale(1);
-    }
+  0% {
+    box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.4);
+    /* Color primario */
+    transform: scale(1);
+  }
 
-    70% {
-        box-shadow: 0 0 0 10px rgba(139, 92, 246, 0);
-        transform: scale(1.02);
-    }
+  70% {
+    box-shadow: 0 0 0 10px rgba(139, 92, 246, 0);
+    transform: scale(1.02);
+  }
 
-    100% {
-        box-shadow: 0 0 0 0 rgba(139, 92, 246, 0);
-        transform: scale(1);
-    }
+  100% {
+    box-shadow: 0 0 0 0 rgba(139, 92, 246, 0);
+    transform: scale(1);
+  }
 }
 
 .animate-pulseCustom {
-    animation: pulseCustom 2000ms infinite;
+  animation: pulseCustom 2000ms infinite;
 }
 
 /* =========================================
-   UTILITIES
+   6. SCROLL SECTION ANIMATE
    ========================================= */
-/* Clase para ocultar elementos antes de animar (si usas Intersection Observer) */
-.opacity-0-start {
-    opacity: 0;
+
+.section-animate {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out;
 }
 
-@media (prefers-reduced-motion: reduce) {
-
-    *,
-    ::before,
-    ::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
+.section-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
 }

@@ -5,7 +5,14 @@ module.exports = {
     "./src/**/*.{html,js,php}"
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'heading': ['Poppins', 'sans-serif'],
+        'body': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        // Sobrescribir la fuente sans por defecto de Tailwind
+        'sans': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 }

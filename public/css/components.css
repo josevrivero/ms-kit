@@ -1,16 +1,21 @@
 /**
  * @file: components.css
- * @description: Reusable UI Components using Tailwind @apply
- * @requires: Tailwind CSS
+ * @description: Reusable UI Components using BEM Methodology
+ * @requires: variables.css
  */
 
 /* =========================================
    1. LAYOUT & CONTAINERS
    ========================================= */
 
-/* Contenedor principal centrado con padding responsivo */
+/* Container - BEM */
 .container {
-  @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  width: 90%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding-left: var(--space-sm);
+  padding-right: var(--space-sm);
+  /* No establecer padding-top ni padding-bottom para permitir py-* */
 }
 
 /* Espacio vertical estándar (según variables de section) */
@@ -37,102 +42,199 @@
 }
 
 /* =========================================
-   3. BUTTONS
+   3. BUTTONS - BEM
    ========================================= */
 
-/* Botón Base: Estructura común, sin colores */
+/* Button Base */
 .btn {
-  @apply inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-sm cursor-pointer transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  border: 2px solid transparent;
 }
 
-/* Botón Primario: Acción principal (CTA) */
-.btn-primary {
-  @apply .btn text-white shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
-  background-color: var(--color-primary);
-}
-
-.btn-primary:hover {
-  background-color: var(--color-primary-dark);
-}
-
-.btn-primary:focus {
-  --tw-ring-color: var(--color-primary);
-}
-
-/* Botón Secundario: Acciones alternativas */
-.btn-secondary {
-  @apply .btn text-white shadow hover:shadow-md;
-  background-color: var(--color-secondary);
-}
-
-.btn-secondary:hover {
-  background-color: var(--color-secondary-dark);
-}
-
-/* Botón Outline: Acciones terciarias o "Ghost" buttons */
-.btn-outline {
-  @apply .btn bg-transparent hover:bg-gray-50;
-  border: 2px solid var(--color-primary);
+/* Button Modifier: Primary */
+.btn--primary {
+  background-color: var(--color-accent);
   color: var(--color-primary);
+  box-shadow: 0 0 15px rgba(0, 224, 255, 0.2);
 }
 
-.btn-outline:hover {
-  background-color: var(--color-primary);
-  color: white;
+.btn--primary:hover {
+  background-color: transparent;
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+  box-shadow: 0 0 25px rgba(0, 224, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Button Modifier: Secondary */
+.btn--secondary {
+  background-color: transparent;
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+  box-shadow: 0 0 25px rgba(0, 224, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Button Modifier: Large */
+@media (min-width: 768px) {
+  .btn--large {
+    width: 25rem;
+  }
+}
+
+/* BTN HIDDEN MOBILE */
+.btn--hidden-mobile {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .btn--hidden-mobile {
+    display: flex;
+  }
 }
 
 /* =========================================
-   4. CARDS
+   4. CARDS - BEM
    ========================================= */
 
-/* Card Base: Fondo blanco, borde sutil, sombra suave */
+/* Card Base - Estilos comunes para cards con fondo semitransparente */
 .card {
-  @apply bg-white rounded-2xl p-6 md:p-8 border border-gray-100;
-  box-shadow: var(--shadow-card);
+  background-color: rgba(17, 34, 64, 0.3); /* #112240 con opacity 30% */
+  border: 1px solid rgba(0, 224, 255, 0.2); /* border-[#00E0FF] con opacity 20% */
+  transition: border-color 300ms ease;
 }
 
-/* Card Hover: Efecto de elevación al pasar el mouse */
-.card-hover {
-  @apply .card transition-all duration-300 transform;
+.card:hover {
+  border-color: rgba(0, 224, 255, 0.4); /* hover:border-[#00E0FF]/40 */
 }
 
-.card-hover:hover {
-  box-shadow: var(--shadow-hover);
-  transform: translateY(-4px);
-  border-color: var(--color-primary-light);
+/* Modificadores de border radius */
+.card--rounded-xl {
+  border-radius: 0.75rem; /* rounded-xl */
+}
+
+.card--rounded-2xl {
+  border-radius: 1rem; /* rounded-2xl */
+}
+
+/* Modificadores de padding */
+.card--p-sm {
+  padding: 1rem; /* p-4 */
+}
+
+.card--p-md {
+  padding: 1.5rem; /* p-6 */
+}
+
+/* Card Element: Icon */
+.card__icon {
+  font-size: 2rem;
+  color: var(--color-accent);
+  margin-bottom: var(--space-sm);
+  display: block;
+}
+
+/* Card Element: Title */
+.card__title {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-xs);
 }
 
 /* =========================================
-   5. FORMS
+   5. LOGO - BEM
    ========================================= */
 
-/* Grupo de formulario (Label + Input) */
-.form-group {
-  @apply mb-5;
+.logo {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: var(--color-white);
+  user-select: none;
 }
 
+.logo__accent {
+  color: var(--color-accent);
+}
+
+/* =========================================
+   6. SECTION HEADER - BEM
+   ========================================= */
+
+.section-header {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-header__overline {
+  color: var(--color-accent);
+  font-family: "Courier New", monospace;
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: var(--space-xs);
+  font-weight: bold;
+}
+
+/* =========================================
+   7. FORMS - BEM
+   ========================================= */
+
+/* Form Group */
+.form-group {
+  margin-bottom: var(--space-md);
+}
+
+/* Form Label */
 .form-label {
-  @apply block text-sm font-medium mb-2;
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: var(--space-xs);
   color: var(--color-text-main);
 }
 
-/* Input Base: Estilos por defecto para inputs y textareas */
+/* Input Base */
 .input-base {
-  @apply block w-full px-4 py-3 rounded-lg border bg-white text-gray-900 placeholder-gray-400 transition-shadow duration-200 ease-in-out;
-  border-color: var(--color-border);
+  display: block;
+  width: 100%;
+  padding: var(--space-sm);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg-body);
+  color: var(--color-text-main);
+  transition: var(--transition-fast);
 }
 
-/* Input Focus: Estado activo */
 .input-base:focus {
-  @apply outline-none ring-2 border-transparent;
-  --tw-ring-color: var(--color-primary);
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(0, 224, 255, 0.1);
 }
 
 /* Input Error */
 .input-error {
-  @apply border-red-500 focus:ring-red-500;
+  border-color: var(--color-error);
+}
+
+.input-error:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
 }
 
 .input-helper {
-  @apply mt-1 text-sm text-gray-500;
+  margin-top: var(--space-xs);
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
 }

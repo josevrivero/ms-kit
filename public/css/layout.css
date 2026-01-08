@@ -1,0 +1,138 @@
+/**
+ * @file: layout.css
+ * @description: Layout Structure & Section Styles (BEM)
+ * @requires: variables.css
+ */
+
+/* =========================================
+   1. NAVIGATION - BEM
+   ========================================= */
+
+.navbar {
+  padding: var(--space-sm) 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(10, 25, 47, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.navbar__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* =========================================
+   2. HERO SECTION - BEM
+   ========================================= */
+
+.hero {
+  padding-top: calc(var(--space-xl) + 60px);
+  /* Offset for fixed nav */
+  padding-bottom: var(--space-lg);
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* Background grid effect */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+      rgba(0, 224, 255, 0.03) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(0, 224, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: -1;
+  mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+}
+
+.hero__content {
+  max-width: 800px;
+}
+
+.hero__title {
+  font-size: clamp(2.2rem, 5vw, 3rem);
+  margin-bottom: var(--space-md);
+}
+
+.hero__title span {
+  color: var(--color-accent);
+}
+
+.hero__subtitle {
+  font-size: 1.25rem;
+  max-width: 600px;
+  margin-bottom: var(--space-md);
+  border-left: 3px solid var(--color-accent);
+  padding-left: var(--space-sm);
+}
+
+/* =========================================
+   3. FEATURES SECTION - BEM
+   ========================================= */
+
+.features {
+  padding: var(--space-lg) 0;
+}
+
+.features__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-md);
+}
+
+/* =========================================
+   4. FOOTER - BEM
+   ========================================= */
+
+.footer {
+  padding: var(--space-lg) 0 var(--space-md);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* =========================================
+   5. HEADER SCROLL BEHAVIOR
+   ========================================= */
+
+#main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--color-border);
+  transform: translateY(-100%);
+  transition: transform 0.3s ease;
+}
+
+#main-header.header-visible {
+  transform: translateY(0);
+}
+
+/* =========================================
+   6. RESPONSIVE UTILITIES
+   ========================================= */
+
+@media (max-width: 768px) {
+  .hero {
+    text-align: left;
+    /* Keep left alignment for readability on mobile */
+    padding-top: var(--space-xl);
+  }
+}
