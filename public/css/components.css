@@ -54,7 +54,6 @@
   font-family: var(--font-heading);
   font-weight: 600;
   font-size: 1rem;
-  text-transform: uppercase;
   letter-spacing: 1px;
   border-radius: var(--border-radius);
   cursor: pointer;
@@ -65,7 +64,7 @@
 /* Button Modifier: Primary */
 .btn--primary {
   background-color: var(--color-accent);
-  color: var(--color-primary);
+  color: var(--color-white);
   box-shadow: 0 0 15px rgba(0, 224, 255, 0.2);
 }
 
@@ -83,7 +82,13 @@
   color: var(--color-accent);
   border-color: var(--color-accent);
   box-shadow: 0 0 25px rgba(0, 224, 255, 0.2);
-  transform: translateY(-2px);
+}
+
+.btn--secondary:hover {
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+  border-color: var(--color-accent);
+  box-shadow: 0 0 25px rgba(0, 224, 255, 0.4);
 }
 
 /* Button Modifier: Large */
@@ -104,6 +109,32 @@
   }
 }
 
+/* Botón Circular (WhatsApp) */
+.btn-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: 2px solid var(--color-light-blue);
+  /* background-color: rgba(2, 48, 71, 0.3); */
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-circle img {
+  width: 1.5rem;
+  height: 1.5rem;
+  object-fit: contain;
+  /* display: block; */
+}
+
+.btn-circle:hover {
+  /* background-color: var(--color-light-blue); */
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 0 1rem rgba(142, 202, 230, 0.4);
+}
+
 /* =========================================
    4. CARDS - BEM
    ========================================= */
@@ -111,6 +142,7 @@
 /* Card Base - Estilos comunes para cards con fondo semitransparente */
 .card {
   background-color: rgba(17, 34, 64, 0.3); /* #112240 con opacity 30% */
+  backdrop-filter: blur(10px);
   border: 1px solid rgba(0, 224, 255, 0.2); /* border-[#00E0FF] con opacity 20% */
   transition: border-color 300ms ease;
 }
@@ -237,4 +269,11 @@
   margin-top: var(--space-xs);
   font-size: 0.875rem;
   color: var(--color-text-muted);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #00e0ff 0%, #0084b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }

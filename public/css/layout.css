@@ -39,7 +39,7 @@
   position: relative;
 }
 
-/* Background grid effect */
+/* BACKGROUND GRID EFFECT */
 .hero::before {
   content: "";
   position: absolute;
@@ -59,7 +59,7 @@
 }
 
 .hero__content {
-  max-width: 800px;
+  max-width: 900px;
 }
 
 .hero__title {
@@ -72,7 +72,7 @@
 }
 
 .hero__subtitle {
-  font-size: 1.25rem;
+  font-size: 1rem;
   max-width: 600px;
   margin-bottom: var(--space-md);
   border-left: 3px solid var(--color-accent);

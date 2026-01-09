@@ -30,7 +30,7 @@ if (empty($_SESSION['csrf_token'])) {
 
 </head>
 
-<body class="bg-[--color-bg-body] text-[--color-text-main] antialiased" data-theme="dark">
+<body data-theme="dark">
 
   <!-- FILENAME: /partials/bg-ambient.svg (inline, above-the-fold asset) -->
   <div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10">
@@ -94,7 +94,7 @@ if (empty($_SESSION['csrf_token'])) {
     </section>
 
     <!-- Proof Social -->
-    <section class="container section-animate">
+    <section class="container reveal">
       <div
         class="check-icon card card--rounded-2xl card--p-md flex items-center justify-center max-w-md mx-auto px-4">
         <div class="text-center">
@@ -109,49 +109,45 @@ if (empty($_SESSION['csrf_token'])) {
       </div>
     </section>
 
-    <section class="container py-12 section-animate">
+    <section class="container py-12 reveal">
       <div class=" max-w-5xl mx-auto space-y-4 px-2">
         <p class="text-lg text-justify">
           Sé que eres excelente en tus tratamientos, pero tu sistema de reservas manual te está costando
           dinero.
         </p>
         <p class="text-lg text-justify">
-          He analizado decenas de clínicas en Palma y el <strong class="text-[#00E0FF]">90% cometen los
+          He analizado decenas de clínicas y el <strong class="text-[#00E0FF]">90% cometen los
             mismos
             fallos</strong> en Instagram y Google Maps que regalan clientes a la competencia.
         </p>
         <p class="text-lg text-justify">
           Déjame analizar tu presencia digital. <strong>Sin coste. Sin compromiso.</strong> Solo ingeniería
-          aplicada a
-          tus ventas.
+          aplicada a tus ventas.
         </p>
       </div>
     </section>
 
     <!-- ============================================
-        FILENAME: components/bullet-points.html
-        Puntos de valor con iconos animados
+        DESCUBRIMIENTO DE ERRORES
     ============================================= -->
-    <section class="container mx-auto py-12 section-animate">
-      <h2 class="text-center text-xl mb-6">
+    <section class="container mx-auto py-12">
+      <h2 class="text-center mb-6">
         En este vídeo de 5 minutos descubrirás:
       </h2>
 
       <ul class="space-y-4 text-left max-w-2xl mx-auto" role="list">
+
+        <!-- EL "AGUJERO NEGRO" DE TU INSTAGRAM -->
         <li
           class="check-icon card card--rounded-xl card--p-sm flex items-start gap-4">
           <span
-            class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-[#00E0FF]/20 text-[--color-accent]"
+            class="flex-shrink-0 w-8 h-8 flex items-center justify-center text-2xl rounded-full bg-[#00E0FF]/20 text-[--color-accent]"
             aria-hidden="true">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd"
-                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                clip-rule="evenodd" />
-            </svg>
+            ✓
           </span>
           <div>
             <strong class="text-[--color-accent]">El "Agujero Negro" de tu Instagram:</strong>
-            <span class="text-white/80"> Por qué tus seguidores ven tus fotos pero no piden
+            <span class="text-[--color-text-main]"> Por qué tus seguidores ven tus fotos pero no piden
               cita.</span>
           </div>
         </li>
@@ -159,17 +155,13 @@ if (empty($_SESSION['csrf_token'])) {
         <li
           class="check-icon card card--rounded-xl card--p-sm flex items-start gap-4">
           <span
-            class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-[#00E0FF]/20 text-[--color-accent]"
+            class="flex-shrink-0 w-8 h-8 flex items-center justify-center text-2xl rounded-full bg-[#00E0FF]/20 text-[--color-accent]"
             aria-hidden="true">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd"
-                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                clip-rule="evenodd" />
-            </svg>
+            ✓
           </span>
           <div>
             <strong class="text-[--color-accent]">La Fricción de WhatsApp:</strong>
-            <span class="text-white/80"> Cuántas horas pierdes respondiendo mensajes que no cierran
+            <span class="text-[--color-text-main]"> Cuántas horas pierdes respondiendo mensajes que no cierran
               ventas.</span>
           </div>
         </li>
@@ -177,17 +169,13 @@ if (empty($_SESSION['csrf_token'])) {
         <li
           class="check-icon card card--rounded-xl card--p-sm flex items-start gap-4">
           <span
-            class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-[#00E0FF]/20 text-[--color-accent]"
+            class="flex-shrink-0 w-8 h-8 flex items-center justify-center text-2xl rounded-full bg-[#00E0FF]/20 text-[--color-accent]"
             aria-hidden="true">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd"
-                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                clip-rule="evenodd" />
-            </svg>
+            ✓
           </span>
           <div>
             <strong class="text-[--color-accent]">3 Correcciones Rápidas (Quick Wins):</strong>
-            <span class="text-[--color-text-muted]"> Cambios que puedes aplicar HOY para llenar esos huecos
+            <span class="text-[--color-text-main]"> Cambios que puedes aplicar HOY para llenar esos huecos
               libres en tu agenda.</span>
           </div>
         </li>
@@ -196,10 +184,10 @@ if (empty($_SESSION['csrf_token'])) {
 
 
     <!-- BOOKING SECTION -->
-    <section id="contacto" class="py-12 bg-[--color-bg-body] section-animate flex justify-center">
+    <section id="contacto" class="py-12 bg-[--color-bg-body] flex justify-center reveal">
       <div class="max-w-5xl mx-auto bg-[--color-bg-surface] rounded-3xl shadow-xl overflow-hidden border border-[--color-border] flex flex-col md:flex-row">
 
-        <!-- Form Info -->
+        <!-- PROTECCIÓN DE DATOS INFO -->
         <div class="bg-[--color-bg-alt] p-10 border-b border-[--color-border] md:w-1/2">
           <h3 class="mb-4 text-center uppercase">🔒 PROTEGEMOS TUS DATOS</h3>
           <p class="mb-4 text-justify">
@@ -225,7 +213,7 @@ if (empty($_SESSION['csrf_token'])) {
           </p>
         </div>
 
-        <!-- Form -->
+        <!-- BOOKING FORM -->
         <div class="p-10 md:w-1/2">
           <form action="/api/submit-booking.php" method="POST" id="booking-form" class="space-y-4">
             <!-- CSRF Token Injected by PHP -->
@@ -235,25 +223,29 @@ if (empty($_SESSION['csrf_token'])) {
             </h3>
             <p>Déjame tus datos para enviarte el vídeo en cuanto esté
               listo.</p>
+            <!-- NAME INPUT -->
             <div class="space-y-2">
               <input type="text" id="name" name="name" required data-validate="text"
-                data-min-length="3"
+                data-min-length="7"
                 class="w-full px-4 py-3 rounded-lg border border-[--color-border] bg-[--color-bg-body] text-[--color-text-main] focus:ring-2 focus:ring-[--color-accent] focus:border-transparent outline-none transition-shadow"
                 placeholder="Nombre Completo">
             </div>
 
+            <!-- EMAIL INPUT -->
             <div class="space-y-2">
               <input type="email" id="email" name="email" required data-validate="email"
                 class="w-full px-4 py-3 rounded-lg border border-[--color-border] bg-[--color-bg-body] text-[--color-text-main] focus:ring-2 focus:ring-[--color-accent] focus:border-transparent outline-none transition-shadow"
                 placeholder="Correo Electrónico">
             </div>
 
+            <!-- INSTAGRAM OR WEB INPUT -->
             <div class="space-y-2">
-              <input type="text" id="instagram_web" name="instagram_web" data-validate="text"
+              <input type="text" id="instagram_web" name="instagram_web" required data-validate="text"
                 class="w-full px-4 py-3 rounded-lg border border-[--color-border] bg-[--color-bg-body] text-[--color-text-main] focus:ring-2 focus:ring-[--color-accent] focus:border-transparent outline-none transition-shadow"
                 placeholder="Instagram o Web">
             </div>
 
+            <!-- CONSENT CHECKBOX -->
             <div class="space-y-4 pt-4">
               <div class="flex items-start gap-3">
                 <input type="checkbox" id="consent_audit" name="consent_audit" required
@@ -284,28 +276,39 @@ if (empty($_SESSION['csrf_token'])) {
       <div class="flex flex-col md:flex-row justify-between items-center">
 
         <nav class="flex flex-col md:flex-row space-y-2 text-center md:space-y-0 md:space-x-4">
-          <a href="#" class="hover:text-[--color-accent] transition-colors">Aviso Legal</a>
-          <a href="#" class="hover:text-[--color-accent] transition-colors">Política de Privacidad</a>
-          <a href="#" class="hover:text-[--color-accent] transition-colors">Cookies</a>
+          <a href="#" class="hover:text-white transition-colors">Aviso Legal</a>
+          <a href="#" class="hover:text-white transition-colors">Política de Privacidad</a>
+          <a href="#" class="hover:text-white transition-colors">Cookies</a>
         </nav>
 
+        <!-- ICON LOADER PHP -->
+        <?php require_once '../src/utils/icon-loader.php'; ?>
+
         <div class="flex space-x-4 mt-4 md:mt-0">
-          <a href="https://www.instagram.com/meiking.systems/" aria-label="Instagram"
-            class="w-10 h-10 rounded-full bg-[--color-bg-surface] border border-[--color-border] flex items-center justify-center hover:bg-[--color-accent] hover:text-white transition-all">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-            </svg>
+          <a href="https://www.instagram.com/meiking.systems/" class="w-10 h-10 rounded-full bg-[--color-bg-surface] border border-[--color-border] flex items-center justify-center hover:text-white transition-all" aria-label="Instagram">
+            <?php echo render_icon('instagram', 'w-5 h-5 text-main'); ?>
           </a>
-          <a href="wa.me/+34658483981" aria-label="WhatsApp"
-            class="w-10 h-10 rounded-full bg-[--color-bg-surface] border border-[--color-border] flex items-center justify-center hover:bg-[--color-accent] hover:text-white transition-all">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-            </svg>
+
+
+          <a href="https://wa.me/34658483981" class="w-10 h-10 rounded-full bg-[--color-bg-surface] border border-[--color-border] flex items-center justify-center hover:text-white transition-all" aria-label="WhatsApp">
+            <?php echo render_icon('whatsapp', 'w-5 h-5 text-main'); ?>
           </a>
+
         </div>
       </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
       <div class="text-center mt-8 text-sm text-[--color-text-muted]">
         &copy; 2026 Meiking Systems. Todos los derechos reservados.
       </div>

@@ -69,25 +69,24 @@ h6 {
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 1.875rem;
   /* ~40px Mobile */
-  letter-spacing: -0.02em;
 }
 
 h2 {
-  font-size: 2rem;
-  /* ~32px */
-  letter-spacing: -0.01em;
-}
-
-h3 {
   font-size: 1.5rem;
   /* ~24px */
 }
 
+h3 {
+  font-size: 1.25rem;
+  /* ~16px */
+}
+
 /* Text styles */
 p {
-  color: var(--color-text-main);
+  color: var(--color-white);
+  font-size: 1.125rem;
 }
 
 /* Desktop typography scaling */
