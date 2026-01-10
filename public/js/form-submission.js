@@ -33,6 +33,9 @@ async function submitForm(formElement, endpoint) {
     `;
     }
 
+    // Variable para almacenar la respuesta (disponible en catch si se lee)
+    let responseText = '';
+    
     try {
         // 2. Preparar datos
         const formData = new FormData(formElement);
@@ -48,21 +51,47 @@ async function submitForm(formElement, endpoint) {
         });
 
         // 4. Parsear respuesta
-        // Intentamos leer JSON incluso si status no es 200 (para leer errores del backend)
-        const data = await response.json().catch(() => ({}));
+        // Leer respuesta una sola vez (el stream solo puede leerse una vez)
+        responseText = await response.text();
+        
+        // Intentar parsear JSON
+        let data = {};
+        try {
+            data = JSON.parse(responseText);
+        } catch (e) {
+            console.error('Error parsing JSON response:', e);
+            console.error('Response text:', responseText);
+            throw new Error('Error al procesar la respuesta del servidor.');
+        }
 
-        if (!response.ok || !data.success) {
+        // 5. Validar respuesta del servidor
+        // El backend devuelve success (boolean) y message (string)
+        
+        if (!response.ok || data.success === false || data.success === undefined) {
+            // Si hay errores específicos de validación, mostrarlos
+            if (data.errors && typeof data.errors === 'object' && Object.keys(data.errors).length > 0) {
+                const firstError = Object.values(data.errors)[0];
+                throw new Error(firstError || data.message || `Error del servidor (${response.status})`);
+            }
             throw new Error(data.message || `Error del servidor (${response.status})`);
         }
 
-        // 5. Manejo de Éxito
+        // 6. Manejo de Éxito
         showFeedback(formElement, 'success', data.message || '¡Formulario enviado correctamente!');
         formElement.reset(); // Limpiar formulario
         return data;
 
     } catch (error) {
-        // 6. Manejo de Errores
+        // 7. Manejo de Errores
         console.error('Submit Error:', error);
+        console.error('Error details:', {
+            message: error.message,
+            stack: error.stack
+        });
+        // responseText está disponible desde el scope superior si se leyó antes del error
+        if (responseText) {
+            console.error('Response text:', responseText);
+        }
         showFeedback(formElement, 'error', error.message || 'Ha ocurrido un error inesperado. Por favor, inténtalo de nuevo.');
         throw error; // Propagar error para manejo externo si se necesita
 

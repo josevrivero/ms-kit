@@ -9,7 +9,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   initMobileMenu();
   initSmoothScroll();
-  initBookingForm();
+  initAuditForm();
   initRevealAnimations();
 });
 
@@ -70,11 +70,17 @@ function initSmoothScroll() {
 /* =========================================
    3. BOOKING FORM ORCHESTRATION
    ========================================= */
-function initBookingForm() {
-  const formSelector = "#booking-form";
+function initAuditForm() {
+  const formSelector = "#audit-form";
   const form = document.querySelector(formSelector);
 
   if (!form) return;
+
+  // Guardar URL de origen (evidencia para consentimientos / auditoría)
+  const sourceUrlInput = form.querySelector("#source_url");
+  if (sourceUrlInput) {
+    sourceUrlInput.value = window.location.href;
+  }
 
   // A. Inicializar Validador (Listener #1)
   // Se encargará de mostrar errores visuales y validar inputs
@@ -96,23 +102,11 @@ function initBookingForm() {
 
     // Si es válido, proceder al envío AJAX
     try {
-      await submitForm(form, "/api/submit-booking.php"); // URL relativa ficticia
-
-      // Opcional: Cerrar modal si existiera, o scroll top
-      // alert('Gracias por tu reserva');
+      await submitForm(form, "api/submit-audit.php");
     } catch (error) {
-      // El manejo de errores UI ya lo hace submitForm
       console.error("Submission failed caught in app.js", error);
     }
   });
-
-  // C. Auto-fill de inputs si vienen por URL (ej. ?treatment=botox)
-  const urlParams = new URLSearchParams(window.location.search);
-  const treatment = urlParams.get("treatment");
-  if (treatment) {
-    const select = form.querySelector('select[name="treatment"]');
-    if (select) select.value = treatment;
-  }
 }
 
 /* =========================================

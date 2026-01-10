@@ -56,7 +56,7 @@ if (empty($_SESSION['csrf_token'])) {
   <header class="fixed w-full top-0 z-50 bg-[--color-bg-surface]/90 backdrop-blur-md shadow-sm transition-all duration-300 border-b border-[--color-border]">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
       <a href="#" aria-label="Inicio">
-        <img src="/assets/images/MS HORZ_2.svg" alt="Logo" class="w-72">
+        <img src="../assets/images/MS HORZ_2.svg" alt="Logo" class="w-72">
       </a>
 
       <!-- Desktop CTA Button -->
@@ -215,9 +215,11 @@ if (empty($_SESSION['csrf_token'])) {
 
         <!-- BOOKING FORM -->
         <div class="p-10 md:w-1/2">
-          <form action="/api/submit-booking.php" method="POST" id="booking-form" class="space-y-4">
+          <form action="api/submit-audit.php" method="POST" id="audit-form" class="space-y-4">
             <!-- CSRF Token Injected by PHP -->
             <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
+            <!-- Source URL for consent/audit evidence -->
+            <input type="hidden" name="_source_url" id="source_url" value="">
             <h3 class="text-center uppercase">Recibe tu
               auditoría
             </h3>
@@ -225,8 +227,8 @@ if (empty($_SESSION['csrf_token'])) {
               listo.</p>
             <!-- NAME INPUT -->
             <div class="space-y-2">
-              <input type="text" id="name" name="name" required data-validate="text"
-                data-min-length="7"
+              <input type="text" id="nombre" name="name" required data-validate="text"
+                data-min-length="3"
                 class="w-full px-4 py-3 rounded-lg border border-[--color-border] bg-[--color-bg-body] text-[--color-text-main] focus:ring-2 focus:ring-[--color-accent] focus:border-transparent outline-none transition-shadow"
                 placeholder="Nombre Completo">
             </div>
